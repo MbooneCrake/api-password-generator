@@ -6,8 +6,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const generateSimplePass = (req, res)=>{
-    const nameDB = req.path.split("/")[1]
+const generateSimplePass = (req, res, nameDB)=>{
     let index = 0
     let result = ''
     const len = parseInt(req.params.len)
@@ -27,19 +26,27 @@ app.get('/', (req, res) => {
 })
 
 app.get('/numbers/:len', (req, res) => {
-    generateSimplePass(req, res)
+    generateSimplePass(req, res, req.path.split("/")[1])
+})
+
+app.get('/letters/:len', (req, res) => {
+    generateSimplePass(req, res, req.path.split("/")[1])
 })
 
 app.get('/lowerLetter/:len', (req, res) => {
-    generateSimplePass(req, res)
+    generateSimplePass(req, res, req.path.split("/")[1])
 })
 
 app.get('/upperLetter/:len', (req, res) => {
-    generateSimplePass(req, res)
+    generateSimplePass(req, res, req.path.split("/")[1])
 })
 
 app.get('/symboles/:len', (req, res) => {
-    generateSimplePass(req, res)
+    generateSimplePass(req, res, req.path.split("/")[1])
+})
+
+app.get('/:len', (req, res) => {
+    generateSimplePass(req, res, req.path.split("/")[0])
 })
 
 app.get('/*', (req, res) => {
