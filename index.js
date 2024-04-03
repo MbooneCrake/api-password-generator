@@ -53,7 +53,7 @@ app.get('/*', (req, res) => {
     res.send({msg: 'Cette requette est invalide!!'})
 })
 
-app.get('/man', (res) => {
+app.get('/man', (req, res) => {
     res.send(`
         ====== Man ======
         routes:
