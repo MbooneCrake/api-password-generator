@@ -54,7 +54,7 @@ app.get('/*', (req, res) => {
 })
 
 app.get('/man', (req, res) => {
-    res.send(`
+    res.send({msg: `
         ====== Man ======
         routes:
             - get('/') => res.send({msg: 'success'})
@@ -72,7 +72,7 @@ app.get('/man', (req, res) => {
             - get('/*') =>  
         
             - get('/man', (res) => 
-    `)
+    `})
 })
 
 app.listen(3001, ()=>console.log("api start on port 3001..."))
