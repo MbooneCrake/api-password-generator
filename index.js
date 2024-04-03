@@ -53,7 +53,7 @@ app.get('/man', (req, res) => {
     res.send({msg: "\
         ====== Man ======\
         routes:\
-            - get('/') => res.send({msg: 'success'})\n\
+            - get('/') => res.send({msg: 'success'})<br/>\
             - get('/numbers/:len') => Retourne un mot de passe de longueur 'len' composer de chiffre\n\
             - get('/letters/:len') => Retourne un mot de passe de longueur 'len' composer de Lettre\n\
             - get('/lowerLetter/:len') => Retourne un mot de passe de longueur 'len' composer de Lettre minuscule\n\
