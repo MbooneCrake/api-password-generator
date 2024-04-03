@@ -49,10 +49,6 @@ app.get('/:len', (req, res) => {
     generateSimplePass(req, res, req.path.split("/")[0])
 })
 
-app.get('/*', (req, res) => {
-    res.send({msg: 'Cette requette est invalide!!'})
-})
-
 app.get('/man', (req, res) => {
     res.send({msg: `
         ====== Man ======
@@ -74,5 +70,10 @@ app.get('/man', (req, res) => {
             - get('/man', (res) => 
     `})
 })
+
+app.get('/*', (req, res) => {
+    res.send({msg: 'Cette requette est invalide!!'})
+})
+
 
 app.listen(3001, ()=>console.log("api start on port 3001..."))
