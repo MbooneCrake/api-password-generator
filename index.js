@@ -45,12 +45,12 @@ app.get('/symboles/:len', (req, res) => {
     generateSimplePass(req, res, req.path.split("/")[1])
 })
 
-app.get('/:len', (req, res) => {
+/*app.get('/:len', (req, res) => {
     generateSimplePass(req, res, req.path.split("/")[0])
-})
+})*/
 
-app.get('/man', (req, res) => {
-    res.send({msg: `
+app.get('/man', (res) => {
+    res.send(`
         ====== Man ======
         routes:
             - get('/') => res.send({msg: 'success'})
@@ -68,7 +68,7 @@ app.get('/man', (req, res) => {
             - get('/*') =>  
         
             - get('/man', (res) => 
-    `})
+    `)
 })
 
 app.get('/*', (req, res) => {
