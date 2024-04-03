@@ -53,4 +53,26 @@ app.get('/*', (req, res) => {
     res.send({msg: 'Cette requette est invalide!!'})
 })
 
+app.get('/man', (res) => {
+    res.send(`
+        ====== Man ======
+        routes:
+            - get('/') => res.send({msg: 'success'})
+
+            - get('/numbers/:len') => Retourne un mot de passe de longueur 'len' composer de chiffre 
+        
+            - get('/letters/:len') => Retourne un mot de passe de longueur 'len' composer de Lettre
+        
+            - get('/lowerLetter/:len') => Retourne un mot de passe de longueur 'len' composer de Lettre minuscule
+        
+            - get('/upperLetter/:len') => Retourne un mot de passe de longueur 'len' composer de Lettre Majuscule
+        
+            - get('/symboles/:len') => Retourne un mot de passe de longueur 'len' composer de symbole
+        
+            - get('/*') =>  
+        
+            - get('/man', (res) => 
+    `)
+})
+
 app.listen(3001, ()=>console.log("api start on port 3001..."))
