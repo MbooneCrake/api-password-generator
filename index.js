@@ -50,7 +50,7 @@ app.get('/symboles/:len', (req, res) => {
 })*/
 
 app.get('/man', (res) => {
-    res.send(`
+    res.send(msg: {`
         ====== Man ======
         routes:
             - get('/') => res.send({msg: 'success'})
@@ -68,7 +68,7 @@ app.get('/man', (res) => {
             - get('/*') =>  
         
             - get('/man', (res) => 
-    `)
+    `})
 })
 
 app.get('/*', (req, res) => {
